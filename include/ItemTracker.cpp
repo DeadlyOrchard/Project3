@@ -87,15 +87,11 @@ void ItemTracker::run()
         case 1: // Frequency of a single item
             std::cout << "Item name: ";
             /*  since, 
-                we're returning 0 for any keys not in the map,
+                the value for any key not in map is zero,
                 and selectItem is a string,
                 no input validating necessary   */
             std::cin >> selectedItem;
-
-            if (m_items.count(selectedItem) != 0)
-                std::cout << selectedItem << " - " << m_items[selectedItem] << '\n';
-            else
-                std::cout << selectedItem << " - 0\n";
+            std::cout << selectedItem << " - " << m_items[selectedItem] << '\n';
             break;
 
         case 2: // Frequency of all items
